@@ -15,8 +15,13 @@ const router = express.Router();
 
 router.post('/ggi-pdf', 
   validatePdfRequest,
-  pdfController.generatePdf
+  pdfController.generateGGIPdf
 );
+
+router.post('/data-pdf', 
+  validatePdfRequest,
+  pdfController.generateDataPdf
+)
 
 app.use('/api', router);
 app.use(errorHandler);
